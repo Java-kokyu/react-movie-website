@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<body>
+<div id="root"></div>
+
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const id = document.getElementById("root");
+    /* FIXME: 1. JSX를 사용하지 않을 경우
+    const h3 = React.createElement("h3", {
+        id: "sexy-span",
+        onMouseEnter: () => console.log("mouse enter"),
+    }, "Hello I'm a span");
+
+    const btn = React.createElelment("button", {
+        onClick: () => console.log("I'm clicked"),
+        style: {
+            backgroundColor: "tomato",
+        },
+    }, "Click me");
+
+    */
+
+    /* FIXME: 2. JSX사용
+    const H3 = () => (<h3 id="sexy-span" onMouseEnter={() => console.log("mouse enter")}>Hello I'm a span</h3>);
+    const Btn = () => (<button style={{
+    backgroundColor: "tomato",
+    }} onClick={() => console.log("I'm clicked")}>Click me</button>);
+    */
+
+    /* FIXME: 3. 동적으로 데이터 및 UI 업데이트
+    let counter = 10;
+    function countUp() {
+        counter += 1;
+        reRender();
+    }
+
+    function reRender() {
+        ReactDOM.render(<Container />, root);
+    }
+    const Container = () => (
+        <div>
+            <h3>Total Click: {counter}</h3>
+            <button onClick={countUp}>Click me</button>
+        </div>
+    );
+    reRender();
+    */
+
+    function App() {
+        let [counter, modifier] = React.useState(0);
+        function onClick() {
+            modifier(counter + 1);
+        }
+        return (
+            <div>
+                <h3>Total Click: {counter}</h3>
+                <button onClick={onClick}>Click me</button>
+            </div>
+        );
+    }
+
+    ReactDOM.render(<App/>, root);
+</script>
+
+</html>
