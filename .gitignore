@@ -1,0 +1,6 @@
+# Default ignored files
+/shelf/
+/react-movie-website/.idea/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+/react-movie-website/node_modules/
